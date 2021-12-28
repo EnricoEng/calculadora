@@ -1,0 +1,13 @@
+:root {
+    --bg-button: white;
+    --border-button: solid 2px grey;
+}
+
+.botaozinho {
+    width: 20%;
+    height:20%;
+    font-size: 1.6em;
+    background-color: var(--bg-button);
+    border: none;
+    border-right: var(--border-button);
+}
