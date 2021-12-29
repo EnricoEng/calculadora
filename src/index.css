@@ -11,3 +11,39 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.LinhaCorrendo  {
+  width: 10px;
+  height: 1px;
+  background-color: rgba(245, 245, 245, 0.452);
+  position: relative;
+  animation-name: linhaDoida;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes linhaDoida {
+  0%   {background-color:rgb(244, 244, 244, 0.5); left:-100px; top:5px;}
+  25%  {background-color:rgb(244, 244, 244, 0.6); left:500px; top:5px;}
+  50%  {background-color:rgb(244, 244, 244, 0.7); left:500px; top:600px;}
+  75%  {background-color:rgb(244, 244, 244, 0.8); left:-100px; top:600px;}
+  100% {background-color:rgb(244, 244, 244, 0.9); left:-100px; top:5px;}
+}
+
+.LinhaCorrendo2  {
+  width: 1px;
+  height: 10px;
+  background-color: rgba(245, 245, 245, 0.452);
+  position: relative;
+  animation-name: linhaDoida2;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes linhaDoida2 {
+  0%   {background-color:rgb(244, 244, 244, 0.5); left:-95px; top:0px;}
+  25%  {background-color:rgb(244, 244, 244, 0.6); left:505px; top:0px;}
+  50%  {background-color:rgb(244, 244, 244, 0.7); left:505px; top:595px;}
+  75%  {background-color:rgb(244, 244, 244, 0.8); left:-95px; top:595px;}
+  100% {background-color:rgb(244, 244, 244, 0.9); left:-95px; top:0px;}
+}
