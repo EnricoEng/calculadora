@@ -4,11 +4,35 @@
 }
 
 .botaozinho {
-    width: 25%;
-    height: 20%;
+    width: 100%;
+    height: 100%;
     font-size: 1.6em;
     background-color: var(--bg-button);
     border: none;
     border-right: var(--border-button);
+    border-bottom:solid 1px gray;
 }
 
+.botaozinho:active{
+    background-color: rgba(121, 121, 121, 0.014);
+}
+
+.botaozinho.double {
+    grid-row: span 2;
+}
+
+.botaozinho.doubleCol {
+    grid-column: span 2;
+}
+
+.botaozinho.triple {
+    grid-column: span 3;
+}
+
+.botaozinho.operacao{
+    background-color: rgba(255, 255, 255, 0.200);
+}
+
+.botaozinho.operacao:active{
+    background-color: rgb(9, 255, 0);
+}
