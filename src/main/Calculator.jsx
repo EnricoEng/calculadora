@@ -19,6 +19,7 @@ export default class Calculator extends React.Component {
 
     constructor(props){
         super(props)
+        this.clearMemory = this.clearMemory.bind(this)
         this.setOperacao = this.setOperacao.bind(this)
         this.addDigit = this.addDigit.bind(this)
     }
@@ -37,10 +38,22 @@ export default class Calculator extends React.Component {
             const currentOperation = this.state.tipoOperacao
 
             const values = [...this.state.valor]
-            try{
-                values[0] = eval(`${values[0]} ${currentOperation} ${values[1]}`)
-            } catch(e) {
-                values[0] = this.state.valor[0]
+            // try{
+            //     values[0] = eval(`${values[0]} ${currentOperation} ${values[1]}`)
+            // } catch(e) {
+            //     values[0] = this.state.valor[0]
+            // }
+            switch (currentOperation) {
+                case '+': 
+                    values[0] = values[0] + values[1];   
+                    break;
+                
+                case '-':
+                    values[0] = values[0] - values[1];
+                    break;
+                
+                default:
+                    break;
             }
             values[1] = 0
 
@@ -70,7 +83,7 @@ export default class Calculator extends React.Component {
 
 
         const displayValor = atualValor + n
-        this.setState( {valorDisplay: displayValor, limparDisplay: clearDisplay} )
+        this.setState( {valorDisplay: displayValor, limparDisplay: false} )
 
         if (n !== '.') {
             const i = this.state.indiceAtual
@@ -78,9 +91,9 @@ export default class Calculator extends React.Component {
             const values = [...this.state.valor]
             values[i] = newValue
             this.setState( { valor: values } )
-            console.log(values)
+            console.log(values)        
         }
-        
+     
     }
 
     render() {
